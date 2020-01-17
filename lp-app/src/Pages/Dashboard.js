@@ -17,6 +17,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
+import SearchBar from '../Components/SearchBar';
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -49,6 +51,17 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  headingWrapper: {
+    textAlign: 'left'
+  },
+  heading: {
+    fontSize: '2em',
+    color: 'gray'
+  },
+  subHeading: {
+    fontSize: '0.8em',
+    color: 'gray'
+  }
 }));
 
 function Dashboard(props) {
@@ -99,9 +112,7 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Responsive drawer
-          </Typography>
+          <SearchBar />
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
@@ -137,12 +148,14 @@ function Dashboard(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
+        <div className={classes.headingWrapper}>
+        <Typography heading className={classes.heading}>
          Dashboard
         </Typography>
-        <Typography paragraph>
-          dashboard & stats
+        <Typography heading className={classes.subHeading}>
+          dashboard & statistics 
         </Typography>
+        </div>
       </main>
     </div>
   );
