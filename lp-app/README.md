@@ -66,3 +66,32 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+Q: Please share your screen resolution, OS, browser version (best if you're using latest) you used to test in so we can look at it in:
+
+A: Macbook Pro 13.3 inch (2500 x 1600)
+
+Q: What part of the design did you get stuck on? What took the most time? Similarly, what was the easiest part?
+
+A: I got stuck on trying to map out icons from MaterialUI with the title text of each nav tab. Since I was trying to reference the icons imported (an object), React didn't like that. Mapping out the text for each of the stats of each number as well, as I was stuck on that. I was a little ambitious and had never used Material-UI React so learning the symantics of this wireframes took me a while, how they use CSS classes. 
+
+Easy parts were building out the layout, using the grid system, CSS. 
+
+Q: What part of the design didn't make sense? Did you change anything?
+
+If you had more time, what would you have liked to implement?
+
+A: Didn't start thinking about routing each nav section using express to it's own route until the end. Using helper functions to properly display the stat numbers. Adding the calender selector, and gear widget. 
+
+What did you have to research or lookup while working on this? 
+
+A: How to target custom CSS elements that are not available with the Material-UI classes framework. I'm used to building custom StyledComponents so if I had time, I would have liked to use this. 
+
+Mapping arrays referencing objects (icons imported), merging two arrays via key, and mapping that to display two different elements per loop.
