@@ -25,7 +25,9 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.8em"
   },
   stats: {
-    borderRight: "1px solid gray"
+    borderRight: "1px solid gray",
+    minWidth: '4em',
+    margin: '0.5em'
   },
   images: {
     width: "100%"
