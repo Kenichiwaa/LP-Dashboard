@@ -86,9 +86,10 @@ Easy parts were building out the layout, using the grid system, CSS.
 
 Q: What part of the design didn't make sense? Did you change anything?
 
+
 If you had more time, what would you have liked to implement?
 
-A: Didn't start thinking about routing each nav section using express to it's own route until the end. Using helper functions to properly display the stat numbers. Adding the calender selector, and gear widget. Grooming the CSS bugs...
+A: Didn't start thinking about routing each nav section using express to it's own route until the end. Using helper functions to properly display the stat numbers. Adding the calender selector, and gear widget. Grooming the CSS bugs... Sidenav doesn't collapse at 1200px
 
 What did you have to research or lookup while working on this? 
 
