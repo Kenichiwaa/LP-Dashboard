@@ -17,12 +17,19 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
+import { DateRange, Description, Home } from "@material-ui/icons";
+
 import SearchBar from "../Components/SearchBar";
 import DashboardCard from "../Components/DashboardCard";
+import ProfileNavIcon from "../Components/ProfileNavIcon";
+import Grid from "@material-ui/core/Grid";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
+  grow: {
+    flexGrow: 12
+  },
   root: {
     display: "flex"
   },
@@ -44,7 +51,21 @@ const useStyles = makeStyles(theme => ({
       display: "none"
     }
   },
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    backgroundColor: "#32B5E0",
+    height: "4.5em"
+  },
+  pageToolBar: {
+    backgroundColor: "#32B5E0",
+    height: "4em"
+  },
+  sideNavTop: {
+    backgroundColor: "#32B5E0"
+  },
+  sidebar: {
+    backgroundColor: "#2A333E",
+    color: "gray"
+  },
   drawerPaper: {
     width: drawerWidth
   },
@@ -53,11 +74,12 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3)
   },
   headingWrapper: {
+    marginTop: "4em",
     textAlign: "left"
   },
   heading: {
     fontSize: "2em",
-    fontWeight: 'lighter'
+    fontWeight: "lighter"
   },
   subHeading: {
     fontSize: "0.8em",
@@ -75,12 +97,28 @@ function Dashboard(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const tabs1 = ["Calendar", "Documentation", "Dashboard"];
+  const tabs2 = ["Admin Pages", "Admin Forms", "Admin Layouts"];
+  const tabs3 = ["Information Panels", "Ecommerce"];
+  const tabs4 = ["UI Elements", "Form Elements", "Plugins", "Pages"];
+  const tabs5 = [
+    "Executive Meeting",
+    "HelpDesk Redesign",
+    "Sony Board Meeting"
+  ];
+
+  const NavSecOne = [
+    { text: "Calendar", icon: DateRange },
+    { text: "Documentation", icon: Description },
+    { text: "Dashboard", icon: Home }
+  ];
+
   const drawer = (
-    <div>
+    <div className={classes.sidebar}>
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {tabs1.map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -91,7 +129,37 @@ function Dashboard(props) {
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
+        {tabs2.map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <List>
+        {tabs3.map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <List>
+        {tabs4.map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <List>
+        {tabs5.map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -107,7 +175,7 @@ function Dashboard(props) {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
+        <Toolbar className={classes.pageToolBar}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -118,6 +186,8 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <SearchBar />
+          <div className={classes.grow} />
+          <ProfileNavIcon />
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
@@ -152,7 +222,6 @@ function Dashboard(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
         <div className={classes.headingWrapper}>
           <Typography heading className={classes.heading}>
             Dashboard
@@ -161,7 +230,8 @@ function Dashboard(props) {
             dashboard & statistics
           </Typography>
         </div>
-            <DashboardCard />
+
+        <DashboardCard />
       </main>
     </div>
   );
