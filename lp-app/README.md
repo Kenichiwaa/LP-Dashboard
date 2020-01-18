@@ -88,10 +88,10 @@ Q: What part of the design didn't make sense? Did you change anything?
 
 If you had more time, what would you have liked to implement?
 
-A: Didn't start thinking about routing each nav section using express to it's own route until the end. Using helper functions to properly display the stat numbers. Adding the calender selector, and gear widget. 
+A: Didn't start thinking about routing each nav section using express to it's own route until the end. Using helper functions to properly display the stat numbers. Adding the calender selector, and gear widget. Grooming the CSS bugs...
 
 What did you have to research or lookup while working on this? 
 
-A: How to target custom CSS elements that are not available with the Material-UI classes framework. I'm used to building custom StyledComponents so if I had time, I would have liked to use this. 
+A: How to target custom CSS elements that are not available with the Material-UI classes framework. I'm used to building custom StyledComponents so if I had time, I would have liked to use this. Some git commands to initialize my branch. 
 
 Mapping arrays referencing objects (icons imported), merging two arrays via key, and mapping that to display two different elements per loop.
