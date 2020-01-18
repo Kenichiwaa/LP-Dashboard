@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 import Grid from "@material-ui/core/Grid";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -24,7 +25,16 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.8em"
   },
   stats: {
-      borderRight: '1px solid gray'
+    borderRight: "1px solid gray"
+  },
+  images: {
+    width: "100%"
+  },
+  cardStats: {
+      marginBottom: '3em'
+  },
+  gridTables: {
+      marginTop: '2em'
   }
 }));
 
@@ -41,24 +51,24 @@ export default function DashboardCard() {
   };
 
   const statText = [
-      'New Feedbacks',
-      'Total Profit',
-      'New Orders',
-      'Brand Popularity'
-  ]
+    "New Feedbacks",
+    "Total Profit",
+    "New Orders",
+    "Brand Popularity"
+  ];
 
   function cardStats(props) {
     let data = Object.values(props.Totals);
-    console.log('data', data);
+    console.log("data", data);
 
     return data.map((stat, key) => (
-      <Grid item xs={6} sm={3} key={key}>
+      <Grid item sm={6} md={3} key={key}>
         <div className={classes.stats}>
           <Typography variant="h2" component="h2">
-          {stat}
+            {stat}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-              text
+            text
           </Typography>
         </div>
       </Grid>
@@ -77,7 +87,26 @@ export default function DashboardCard() {
       </div>
 
       <CardContent>
-        <Grid container>{cardStats(stats)}</Grid>
+        <Grid container className={classes.cardStats}>
+        {cardStats(stats)}
+        </Grid>
+
+        <Divider />
+
+        <Grid container  className={classes.gridTables}>
+          <Grid item md={6}>
+            <img
+              src={require("../Images/table2.png")}
+              className={classes.images}
+            />
+          </Grid>
+          <Grid item md={6}>
+            <img
+              src={require("../Images/table1.png")}
+              className={classes.images}
+            />
+          </Grid>
+        </Grid>
       </CardContent>
     </Card>
   );
